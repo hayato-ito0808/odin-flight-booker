@@ -1,24 +1,54 @@
 # README
+# Odin Flight Booker
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+航空券予約サイトを模したRailsアプリです。
 
-Things you may want to cover:
+The Odin Project の Rails カリキュラム課題として作成しました。
 
-* Ruby version
+## 機能
 
-* System dependencies
+- 出発空港・到着空港・日付・人数によるフライト検索
+- フライト選択
+- 複数乗客の予約
+- 予約情報の表示
 
-* Configuration
+## 使用技術
 
-* Database creation
+- Ruby
+- Ruby on Rails
+- SQLite3
 
-* Database initialization
+## 学習内容
 
-* How to run the test suite
+このプロジェクトでは以下を学習しました。
 
-* Services (job queues, cache servers, search engines, etc.)
+- ActiveRecord の関連付け
+- フォームオブジェクト
+- nested attributes
+- fields_for
+- GETリクエストによる検索フォーム
+- Rails の MVC 設計
 
-* Deployment instructions
+## モデル構成
 
-* ...
+- Airport
+- Flight
+- Booking
+- Passenger
+
+## セットアップ
+
+```bash
+bundle install
+rails db:create
+rails db:migrate
+rails db:seed
+rails s
+```
+
+## 今後追加したい機能
+
+- ユーザー認証
+- 決済機能
+- メール送信
+- フライト絞り込み
