@@ -7,3 +7,12 @@
 #   ["Action", "Comedy", "Drama", "Horror"].each do |genre_name|
 #     MovieGenre.find_or_create_by!(name: genre_name)
 #   end
+Kansai = Airport.create(code: "KIX", name: "Kansai")
+Haneda = Airport.create(code: "HND", name: "Haneda")
+Itami = Airport.create(code: "ITM", name: "Itami")
+
+Flight.create(departure_airport: Haneda, arrival_airport: Itami, start_datetime: "2026-05-20", flight_duration: 2)
+
+Flight.create(departure_airport: Haneda, arrival_airport: Kansai, start_datetime: "2026-05-20", flight_duration: 1)
+
+Flight.create(departure_airport: Kansai, arrival_airport: Itami, start_datetime: "2026-05-20", flight_duration: 4)
