@@ -1,0 +1,30 @@
+<h1>Flights</h1>
+<%= form_with url: flights_path, method: :get do |f| %>
+    <%= f.label :departure_airport_id, "出発空港" %>
+    <%= f.select :departure_airport_id, @airports %>
+
+    <%= f.label :arrival_airport_id, "到着空港" %>
+    <%= f.select :arrival_airport_id, @airports %>
+
+    <%= f.label :start_datetime, "出発日" %>
+    <%= f.select :start_datetime, @flight_datetimes %>
+
+    <%= f.submit %>
+    
+<% end %>
+
+<% if @search_flights.present? %>
+    <%= form_with url: new_booking_path, method: :get do |f|  %>
+        <p>
+            <% @search_flights.each do |flight| %>
+                <%= f.radio_button :flight_id, flight.id %><%= flight.inspect %>
+                <br>
+            <% end %>
+
+            <%= f.label :passenger_count, "人数" %>
+            <%= f.text_field :passenger_count %>
+        </p>
+
+        <%= f.submit %>
+    <% end %>
+<% end %>

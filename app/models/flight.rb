@@ -5,5 +5,5 @@ class Flight < ApplicationRecord
     belongs_to :arrival_airport,      
                 foreign_key: :arrival_airport_id,
                 class_name: "Airport"
-                            
+    has_many :bookings               
 end
